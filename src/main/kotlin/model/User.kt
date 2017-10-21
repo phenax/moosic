@@ -10,7 +10,10 @@ import io.vertx.ext.mongo.MongoClient;
 class User: AbstractModel() {
 
 	// For all the table operations 
-	companion object Factory: AbstractModelTable() {}
+	companion object Table: AbstractModelTable() {
+
+		override val collectionName = "users";
+	}
 
 	/*var user = UserEntity("", "");
 

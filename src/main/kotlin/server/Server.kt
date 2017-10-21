@@ -17,7 +17,8 @@ class ServerKt: AbstractVerticle() {
 		val port = config().getInteger("http.port", 8080)
 
 		val routes = Routes(vertx)
-		val db = Database(vertx)
+
+		val db = Database()
 
 		vertx
 			.createHttpServer()

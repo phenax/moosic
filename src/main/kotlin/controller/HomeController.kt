@@ -1,6 +1,7 @@
 package controller
 
 import io.vertx.ext.web.RoutingContext
+import io.vertx.core.json.JsonObject
 
 import model.*
 
@@ -8,7 +9,10 @@ class HomeController {
 	companion object Factory: AbstractController() {
 
 		fun index(ctx: RoutingContext) {
-			this.sendJSON(ctx, listOf("Hello world", "wowwo"))
+			User.find(mapOf())
+				.subscribe({ res: List<JsonObject> ->
+					this.sendJSON(ctx, res)
+				})
 		}
 
 		fun test(ctx: RoutingContext) {
