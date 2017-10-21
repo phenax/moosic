@@ -11,10 +11,8 @@ class HomeControllerKt: AbstractControllerKt() {
 	}
 
 	fun test(ctx: RoutingContext) {
-		this.sendFile(ctx, ".gitignore").subscribe(
-			{ println("File sent") },
-			{ println(it) }
-		)
+		this.sendFile(ctx, ".gitignore")
+			.subscribe({}, { println(it) })
 	}
 }
 

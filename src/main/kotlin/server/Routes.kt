@@ -5,6 +5,7 @@ import io.vertx.core.Vertx
 
 import controller.HomeControllerKt
 import io.vertx.ext.web.RoutingContext
+import io.vertx.ext.web.handler.StaticHandler
 
 // Route type
 data class Route(
@@ -12,22 +13,24 @@ data class Route(
 	val handler: (RoutingContext) -> Unit
 );
 
-class Routes(vertx: Vertx) {
-	val router = Router.router(vertx)
+class Routes(vertex: Vertx) {
+
+	val router = Router.router(vertex)
 
 	// Controller initializations
-	val homeCtrlr = HomeControllerKt()
+	val homeController = HomeControllerKt()
 
 	// List of simple routes
 	val routes: List<Route> = listOf(
-		Route("/", { ctx: RoutingContext -> homeCtrlr.index(ctx) }),
-		Route("/test", { ctx: RoutingContext -> homeCtrlr.test(ctx) })
+		Route("/", { ctx: RoutingContext -> homeController.index(ctx) }),
+		Route("/test", { ctx: RoutingContext -> homeController.test(ctx) })
 	)
 
 	init {
-		this.routes
-			.forEach({
-				this.router.route(it.path).handler(it.handler)
-			})
+		routes.forEach({
+			router.route(it.path).handler(it.handler)
+		})
+
+		router.route("/*").handler(StaticHandler.create("src/main/public"))
 	}
 }
