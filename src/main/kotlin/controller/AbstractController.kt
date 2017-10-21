@@ -6,9 +6,9 @@ import io.reactivex.*
 import io.vertx.core.AsyncResult
 
 
-abstract class AbstractControllerKt {
+abstract class AbstractController {
 
-	fun send(ctx: RoutingContext, content: String, contentType: String): AbstractControllerKt {
+	fun send(ctx: RoutingContext, content: String, contentType: String): AbstractController {
 
 		ctx.response()
 			.putHeader("Content-Type", contentType)
@@ -17,11 +17,11 @@ abstract class AbstractControllerKt {
 		return this
 	}
 
-	fun sendHTML(ctx: RoutingContext, strContent: String): AbstractControllerKt {
+	fun sendHTML(ctx: RoutingContext, strContent: String): AbstractController {
 		return this.send(ctx, strContent, "text/html")
 	}
 
-	fun sendJSON(ctx: RoutingContext, obj: Any): AbstractControllerKt {
+	fun sendJSON(ctx: RoutingContext, obj: Any): AbstractController {
 		val jsonString = Gson().toJson(obj)
 		return this.send(ctx, jsonString, "application/json")
 	}
@@ -51,7 +51,7 @@ abstract class AbstractControllerKt {
 	}
 
 
-	fun throwNotFoundException(ctx: RoutingContext): AbstractControllerKt {
+	fun throwNotFoundException(ctx: RoutingContext): AbstractController {
 
 		val response = ctx.response()
 		response.statusCode = 404
