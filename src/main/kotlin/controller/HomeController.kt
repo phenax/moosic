@@ -8,7 +8,7 @@ class HomeController {
 	companion object Factory: AbstractController() {
 
 		fun index(ctx: RoutingContext) {
-			this.sendJSON(ctx, "Hello world")
+			this.sendJSON(ctx, listOf("Hello world", "wowwo"))
 		}
 
 		fun test(ctx: RoutingContext) {

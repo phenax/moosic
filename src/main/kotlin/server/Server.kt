@@ -10,13 +10,14 @@ import io.vertx.ext.web.RoutingContext
 
 
 @Suppress("unused")
-class ServerKt : AbstractVerticle() {
+class ServerKt: AbstractVerticle() {
 
 	override fun start(startFuture: Future<Void>?) {
 
 		val port = config().getInteger("http.port", 8080)
 
 		val routes = Routes(vertx)
+		val db = Database(vertx)
 
 		vertx
 			.createHttpServer()
