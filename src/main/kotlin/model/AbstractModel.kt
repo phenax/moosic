@@ -37,7 +37,7 @@ abstract class AbstractModelCollection<T> {
 					} else {
 
 						val results =
-							res.result().map({ it.mapTo(entityClass) })
+							res.result().map { it.mapTo(entityClass) }
 
 						subscriber.onSuccess(results)
 					}

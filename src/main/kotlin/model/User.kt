@@ -12,9 +12,8 @@ class User: AbstractModel() {
 
 	// For all the table operations 
 	companion object Table: AbstractModelCollection<UserEntity>() {
-
 		override val collectionName = "users"
-		override val entityClass = UserEntity::class.java
+		override val entityClass = (UserEntity::class.java) // Parenthesis because something is screwing with syntax highlighting
 	}
 
 	var user = UserEntity("", "");

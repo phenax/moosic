@@ -19,8 +19,8 @@ class Routes(vertex: Vertx) {
 
 	init {
 
-		router.route("/").handler({ HomeController.index(it) })
-		router.route("/test").handler({ HomeController.test(it) })
+		router.route("/").handler { HomeController.index(it) }
+		router.route("/test").handler { HomeController.test(it) }
 
 		router.route("/*").handler(StaticHandler.create("src/main/public"))
 	}
