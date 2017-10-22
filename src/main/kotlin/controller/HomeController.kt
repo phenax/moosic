@@ -10,7 +10,7 @@ class HomeController {
 
 		fun index(ctx: RoutingContext) {
 			User.find(mapOf())
-				.subscribe({ res: List<JsonObject> ->
+				.subscribe({ res: List<UserEntity> ->
 					this.sendJSON(ctx, res)
 				})
 		}
