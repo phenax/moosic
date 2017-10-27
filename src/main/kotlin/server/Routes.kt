@@ -7,11 +7,6 @@ import controller.*
 import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.handler.StaticHandler
 
-// Route type
-// data class Route(
-// 	val path: String,
-// 	val handler: (RoutingContext) -> Unit
-// );
 
 class Routes(vertex: Vertx) {
 

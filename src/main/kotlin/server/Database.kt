@@ -6,16 +6,20 @@ import io.vertx.core.Vertx
 
 import model.*
 
+
+val connectionConfig = mapOf(
+	//"username"      to "john",
+	//"password"      to "passw0rd",
+	"db_name"       to "moosic",
+	"host"          to "127.0.0.1",
+	"port"          to 27017,
+	"maxPoolSize"   to 50,
+	"useObjectId"   to true
+)
+
+
 fun newConnection(vertx: Vertx): MongoClient {
-	return MongoClient.createShared(vertx, JsonObject(mapOf(
-		// "username" to "john",
-		// "password" to "passw0rd",
-		"db_name" to "moosic",
-		"host" to "127.0.0.1",
-		"port" to 27017,
-		"maxPoolSize" to 50,
-		"useObjectId" to true
-	)))
+	return MongoClient.createShared(vertx, JsonObject(connectionConfig))
 }
 
 class Database {
@@ -29,11 +33,5 @@ class Database {
 		}
 	}
 
-	var connection: MongoClient;
-
-	init {
-		connection = Database.connect()
-
-		// connection.find("users", JsonObject("""{}"""), { println(it) })
-	}
+	val connection: MongoClient = Database.connect()
 }
