@@ -4,19 +4,18 @@ import io.vertx.ext.web.RoutingContext
 import io.vertx.core.json.JsonObject
 
 import model.*
+import view.pages.HomePageView
 
 class HomeController {
+
 	companion object Factory: AbstractController() {
 
 		fun index(ctx: RoutingContext) {
-			User.find(mapOf())
-				.subscribe({ res: List<UserEntity> ->
-					this.sendJSON(ctx, res)
-				})
+			render(ctx, HomePageView())
 		}
 
 		fun test(ctx: RoutingContext) {
-			this.sendFile(ctx, ".gitignore")
+			sendFile(ctx, ".gitignore")
 				.subscribe({}, { println(it) })
 		}
 	}

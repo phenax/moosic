@@ -1,4 +1,15 @@
 
+<style lang="scss" scoped>
+
+$cool: #51e980;
+.cool {
+	.cool {
+		color: $cool;
+	}
+}
+
+</style>
+
 <template>
 	<div id='appRoot'>
 		<div>
@@ -36,11 +47,3 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-	$cool: #51e980;
-	.cool {
-		.cool {
-			color: $cool;
-		}
-	}
-</style>

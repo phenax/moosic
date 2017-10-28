@@ -5,8 +5,16 @@ import com.google.gson.Gson
 import io.reactivex.*
 import io.vertx.core.AsyncResult
 
+import view.AbstractView
 
 abstract class AbstractController {
+
+
+	fun render(ctx: RoutingContext, view: AbstractView): AbstractController {
+		val htmlContent = view.renderToHtml()
+		send(ctx, htmlContent, "text/html")
+		return this
+	}
 
 	fun send(ctx: RoutingContext, content: String, contentType: String): AbstractController {
 
