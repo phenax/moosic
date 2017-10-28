@@ -4,9 +4,9 @@ import view.AbstractComponent
 import view.layouts.RootLayout
 import view.Node
 
-class HomePageView: AbstractComponent() {
+class HomePage: AbstractComponent() {
 
-	override val layout = RootLayout()
+	override val layout = RootLayout("Moosic HomepageBoeey")
 
 	override fun render(): Node {
 
