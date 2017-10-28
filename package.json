@@ -4,6 +4,9 @@
   "description": "Moosic app",
   "main": "src/main/client/js/main.js",
   "scripts": {
+    "start": "./gradlew run",
+    "build:js": "webpack -p",
+    "watch:js": "webpack -w",
     "test": "__"
   },
   "repository": {
