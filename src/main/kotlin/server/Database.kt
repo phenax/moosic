@@ -34,4 +34,8 @@ class Database {
 	}
 
 	val connection: MongoClient = Database.connect()
+
+	init {
+		
+	}
 }
