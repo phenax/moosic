@@ -1,25 +1,21 @@
 package view.pages
 
-import view.AbstractView
 import view.AbstractComponent
+import view.layouts.RootLayout
 import view.Node
 
-class CustomComponent(val children: List<Node>?): AbstractComponent() {
-	override fun render(): Node {
-		return h("div", null, children)
-	}
-}
+class HomePageView: AbstractComponent() {
 
-class HomePageView: AbstractView() {
+	override val layout = RootLayout()
 
 	override fun render(): Node {
 
-		return h(CustomComponent(listOf(
-			h("div", mapOf( "class" to "hello" ),
+		return (
+			div(mapOf( "class" to "hello" ),
 				listOf(
 					text("Hello world Twice")
 				)
 			)
-		)))
+		)
 	}
 }
