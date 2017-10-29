@@ -1,7 +1,10 @@
-node_modules
 build
 .gradle
 .idea
 *.iml
 .vertx
 .idea
+
+node_modules
+src/main/public/js/*
+src/main/public/css/*
