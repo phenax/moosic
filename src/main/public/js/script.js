@@ -11120,6 +11120,8 @@ module.exports = __webpack_require__(8);
 "use strict";
 
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _vue = __webpack_require__(0);
 
 var _vue2 = _interopRequireDefault(_vue);
@@ -11143,13 +11145,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _vuexRouterSync.sync)(_store2.default, _routes2.default);
 
 // Initialize the application
-var app = new _vue2.default({
+var app = new _vue2.default(_extends({
 	router: _routes2.default,
-	store: _store2.default,
-	render: function render(h) {
-		return h(_App2.default);
-	}
-});
+	store: _store2.default
+}, _App2.default));
 
 // Mount to hook
 app.$mount('#applicationHook');
@@ -13104,7 +13103,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", [_vm._v("Hello world")]),
+    _c("h2", [_vm._v("Hello world..")]),
     _vm._v(" "),
     _c("p", [
       _vm._v(

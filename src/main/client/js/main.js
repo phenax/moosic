@@ -13,7 +13,7 @@ sync(store, router)
 const app = new Vue({
 	router,
 	store,
-	render: h => h(RootApp),
+	...RootApp,
 })
 
 // Mount to hook
