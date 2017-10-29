@@ -6,16 +6,15 @@ import view.Node
 
 class HomePage: AbstractComponent() {
 
-	override val layout = RootLayout("Moosic Homepage")
+	override val layout = RootLayout("Moosic")
 
 	override fun render(): Node {
 
 		return (
-			div(mapOf( "class" to "hello" ),
-				listOf(
-					text("Hello world Twice")
-				)
-			)
+			div(null, listOf(
+				div(mapOf( "id" to "applicationHook" ), null),
+				script("/js/script.js", mapOf("async" to "async", "defer" to "defer"))
+			))
 		)
 	}
 }

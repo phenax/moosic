@@ -25,19 +25,11 @@ $cool: #51e980;
 
 <script>
 
+import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-const TestComponent = { template: '<div>Wpooooooo</div>' };
-const NoComponent = { template: '<div>404</div>' };
-
 export default {
-	router: new VueRouter({
-		mode: 'history',
-		routes: [
-			{ path: '/', component: TestComponent },
-			{ path: '*', component: NoComponent },
-		],
-	}),
+	name: 'moo-app',
 	data() {
 		return {
 			message: 'Message'

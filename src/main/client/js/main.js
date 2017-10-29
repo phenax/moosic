@@ -1,13 +1,16 @@
 
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 
-import App from './App.vue';
+import router from './libs/router';
+import RootApp from './App.vue';
 
-Vue.use(VueRouter)
 
 // Initialize the application
 const app = new Vue({
-	components: { App }
-}).$mount('#applicationHook');
+	router,
+	render: h => h(RootApp),
+});
+
+// Mount to hook
+app.$mount('#applicationHook');
 

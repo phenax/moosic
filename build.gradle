@@ -53,7 +53,7 @@ run {
 	args = [
 		'run', mainVerticleName,
 			"--launcher-class=$mainClassName",
-			"--redeploy=src/**/*.*",
+			"--redeploy=src/main/kotlin/**/*.*",
 			"--on-redeploy=./gradlew classes"
 	]
 }

@@ -32,5 +32,9 @@ abstract class AbstractView {
 	fun h4(props: Map<String, String>?, children: List<Node>?): Node = h("h4", props, children)
 	fun h5(props: Map<String, String>?, children: List<Node>?): Node = h("h5", props, children)
 	fun h6(props: Map<String, String>?, children: List<Node>?): Node = h("h6", props, children)
-	fun script(src: String, props: Map<String, String>?): Node = h("script", props, null)
+	fun script(src: String, props: Map<String, String> = mapOf<String, String>()): Node {
+		val mutableProps = props.toMutableMap()
+		mutableProps.put("src", src)
+		return h("script", mutableProps, null)
+	}
 }
