@@ -6,15 +6,16 @@ const fs = require('fs');
 const SOURCE_DIR = path.resolve('./src/main/client/js');
 const BUILD_DIR = path.resolve('./src/main/public/js');
 
-const _s = filename => path.join(SOURCE_DIR, filename + '.js');
+const _js = filename => path.join(SOURCE_DIR, filename + '.js');
 
 const webpackConfig= {
 
 	target: 'web',
 
 	entry: {
-		script: [ 'main' ].map(k => _s(k)),
-		// serviceworker: [ _s('serviceworker') ],
+		script: [ _js('main') ],
+		// serviceworker: [ _js('serviceworker') ],
+		// ssr: [ _js('ssr') ],
 	},
 
 	output: {

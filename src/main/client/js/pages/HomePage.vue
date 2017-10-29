@@ -15,7 +15,7 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 		<div>
-			<div>{{ $store.state.count }} {{ count }}</div>
+			<div>{{ $store.state.count }}</div>
 			<button @click="$store.commit('INCREMENT')">+</button>
 			<button @click="$store.commit('DECREMENT')">-</button>
 		</div>
@@ -25,9 +25,7 @@
 <script>
 
 export default {
-	computed: {
-		count() { return this.$store.state.count }, // One example computed way and one directly
-	},
+	computed: {},
 }
 
 </script>

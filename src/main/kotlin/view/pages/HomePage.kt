@@ -13,7 +13,7 @@ class HomePage: AbstractComponent() {
 		return (
 			div(null, listOf(
 				div(mapOf( "id" to "applicationHook" ), null),
-				script("/js/script.js", mapOf("async" to "async", "defer" to "defer"))
+				script("/js/script.js", mapOf("async" to "", "defer" to ""))
 			))
 		)
 	}
