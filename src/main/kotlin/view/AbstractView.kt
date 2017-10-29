@@ -21,6 +21,9 @@ abstract class AbstractView {
 	// Text node shorthand
 	fun text(text: String): Node = TextNode(text)
 
+	// File node shorthand
+	fun file(text: String, loadOnCreate: Boolean): Node = FileNode(text, loadOnCreate)
+
 	// Html element shorthands
 	fun html(props: Map<String, String>?, children: List<Node>?): Node = h("html", props, children)
 	fun body(props: Map<String, String>?, children: List<Node>?): Node = h("body", props, children)

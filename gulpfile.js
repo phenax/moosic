@@ -40,9 +40,9 @@ const buildAndSave= (transform=(s => s)) => {
 		.pipe(gulp.dest(path.resolve(BUILD_DIR, 'css')));
 
 	transform(buildCSS(inlineCSS$))
-		.pipe(rename('inline-styles.gohtml'))
+		.pipe(rename('inline-styles.css'))
 		.pipe(fileSize())
-		.pipe(gulp.dest(path.resolve('views', 'partials')));
+		.pipe(gulp.dest(path.resolve(BUILD_DIR, 'css')));
 };
 
 

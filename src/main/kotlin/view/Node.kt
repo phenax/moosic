@@ -1,5 +1,7 @@
 package view
 
+import java.io.File
+
 abstract class Node {
 	abstract fun toHtml(): String
 }
@@ -22,5 +24,21 @@ class TextNode(val text: String): Node() {
 
 	override fun toHtml(): String {
 		return text;
+	}
+}
+
+class FileNode(val filePath: String, val loadOnCreate: Boolean): Node() {
+
+	private val _fileContents = if(loadOnCreate) _readFile() else ""
+
+	private fun _readFile(): String {
+		return File(filePath)
+			.inputStream()
+			.bufferedReader()
+			.use { it.readText() }
+	}
+
+	override fun toHtml(): String {
+		return if(loadOnCreate) _fileContents else _readFile()
 	}
 }
