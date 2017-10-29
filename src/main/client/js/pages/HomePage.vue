@@ -14,18 +14,20 @@
 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
+		<div>
+			<div>{{ $store.state.count }} {{ count }}</div>
+			<button @click="$store.commit('INCREMENT')">+</button>
+			<button @click="$store.commit('DECREMENT')">-</button>
+		</div>
 	</div>
 </template>
 
 <script>
 
 export default {
-	data() {
-		console.log(this);
-		return {
-
-		};
-	}
-};
+	computed: {
+		count() { return this.$store.state.count }, // One example computed way and one directly
+	},
+}
 
 </script>
