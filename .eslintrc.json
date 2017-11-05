@@ -27,7 +27,10 @@
         "semi": [
             "error",
             "always"
+        ],
+        "no-console": [
+            "warn",
+            { "allow": [ "warn", "error" ] }
         ]
-        // "vue/valid-v-if": "error"
     }
 }
