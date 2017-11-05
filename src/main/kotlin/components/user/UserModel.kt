@@ -2,8 +2,7 @@ package components.user
 
 import io.vertx.ext.mongo.MongoClient;
 
-import components.base.AbstractModelDocument
-import components.base.AbstractModelCollection
+import components.base.model.*
 
 // User entity
 class UserModel: AbstractModelDocument() {

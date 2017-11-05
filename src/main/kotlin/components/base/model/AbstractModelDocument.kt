@@ -1,4 +1,4 @@
-package components.base
+package components.base.model
 
 // Document class
 abstract class AbstractModelDocument {

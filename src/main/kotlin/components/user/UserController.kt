@@ -3,7 +3,7 @@ package components.user
 import io.vertx.ext.web.RoutingContext
 import io.vertx.core.json.JsonObject
 
-import components.base.AbstractController
+import components.base.controller.AbstractController
 
 class UserController {
 

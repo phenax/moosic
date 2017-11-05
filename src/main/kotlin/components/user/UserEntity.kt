@@ -1,6 +1,6 @@
 package components.user
 
-import components.base.AbstractModelData
+import components.base.model.*
 
 data class UserEntity(
 	override val _id: String = "",

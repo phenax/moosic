@@ -1,4 +1,4 @@
-package components.base
+package components.base.controller
 
 import io.vertx.ext.web.RoutingContext
 import com.google.gson.Gson
