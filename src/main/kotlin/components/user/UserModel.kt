@@ -2,13 +2,8 @@ package components.user
 
 import io.vertx.ext.mongo.MongoClient;
 
-import components.base.*
-
-data class UserEntity(
-	override val _id: String = "",
-	var name: String = "",
-	var email: String = ""
-): AbstractModelData()
+import components.base.AbstractModelDocument
+import components.base.AbstractModelCollection
 
 // User entity
 class UserModel: AbstractModelDocument() {

@@ -6,6 +6,7 @@ import io.vertx.ext.web.RoutingContext
 import io.vertx.ext.web.handler.StaticHandler
 
 import components.home.HomeController
+import components.user.UserController
 
 /**
  * Registers all routes
@@ -16,9 +17,13 @@ class Routes(vertex: Vertx) {
 
 	init {
 
-		router.route("/public/*").handler(StaticHandler.create("src/main/public"))
-		router.route("/test").handler { HomeController.test(it) }
+		// Api routes
+		router.route("/api/users").handler { UserController.index(it) }
 
+		// Static stuff
+		router.route("/public/*").handler(StaticHandler.create("src/main/public"))
+
+		// Root html page render
 		router.route("/*").handler { HomeController.index(it) }
 	}
 }
