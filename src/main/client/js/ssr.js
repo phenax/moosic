@@ -7,7 +7,7 @@ global.window = global;
 import vueAppRoot from './app';
 
 import vueSsr from 'vue-server-renderer';
-const renderer = vueSsr.createRenderer()
+const renderer = vueSsr.createRenderer();
 
 console.log(renderer);
 

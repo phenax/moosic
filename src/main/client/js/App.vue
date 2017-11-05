@@ -25,17 +25,14 @@ $cool: #51e980;
 
 <script>
 
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
 export default {
 	name: 'moo-app',
 	data() {
 		return {
 			message: 'Message'
-		}
+		};
 	}
-}
+};
 
 </script>
 

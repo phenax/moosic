@@ -25,7 +25,13 @@
 <script>
 
 export default {
+	created() {
+		console.log(this);
+	},
+	mounted() {},
+	updated() {},
+	destroyed() {},
 	computed: {},
-}
+};
 
 </script>
