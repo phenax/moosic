@@ -14,19 +14,19 @@ class ServerKt: AbstractVerticle() {
 
 	override fun start(startFuture: Future<Void>?) {
 
-		val port = config().getInteger("http.port", 8080)
+		val PORT = config().getInteger("http.port", 8080)
 
+		// Instantiate routes, db, etc.
 		val routes = Routes(vertx)
-
 		val db = Database()
 
 		vertx
 			.createHttpServer()
 			.requestHandler { routes.router.accept(it) }
-			.listen(port) {
+			.listen(PORT) {
 				result ->
 					if(result.succeeded()) {
-						println("Server started on port $port")
+						println("Server started on port $PORT")
 						startFuture?.complete()
 					} else {
 						startFuture?.fail(result.cause())

@@ -1,12 +1,14 @@
-package model
+package components.base
+
+import server.Database
 
 import io.vertx.ext.mongo.MongoClient
 import io.reactivex.*
 import io.vertx.core.AsyncResult
 import io.vertx.core.json.JsonObject
 
-import server.Database
 
+// Collection class
 abstract class AbstractModelCollection<T> {
 
 	val db = Database.connect()
@@ -45,13 +47,3 @@ abstract class AbstractModelCollection<T> {
 		})
 	}
 }
-
-abstract class AbstractModel {
-
-	constructor() {
-		this.initialize()
-	}
-
-	abstract fun initialize()
-}
-

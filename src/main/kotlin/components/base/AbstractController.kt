@@ -1,11 +1,9 @@
-package controller
+package components.base
 
 import io.vertx.ext.web.RoutingContext
 import com.google.gson.Gson
 import io.reactivex.*
 import io.vertx.core.AsyncResult
-
-import view.AbstractView
 
 abstract class AbstractController {
 
