@@ -1,7 +1,7 @@
-package components.base.layouts
+package components.base.view.layouts
 
-import components.base.AbstractLayout
-import components.base.AbstractComponent
+import components.base.view.AbstractLayout
+import components.base.view.AbstractComponent
 import libs.dom.DOMNode
 
 

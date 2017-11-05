@@ -1,6 +1,4 @@
-package components.base
-
-import components.base.*
+package components.base.view
 
 import libs.dom.*
 

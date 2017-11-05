@@ -5,6 +5,8 @@ import com.google.gson.Gson
 import io.reactivex.*
 import io.vertx.core.AsyncResult
 
+import components.base.view.AbstractView
+
 abstract class AbstractController {
 
 

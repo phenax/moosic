@@ -1,4 +1,4 @@
-package components.base
+package components.base.view
 
 import libs.dom.DOMNode
 

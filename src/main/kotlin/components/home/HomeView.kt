@@ -1,7 +1,7 @@
 package components.home
 
-import components.base.AbstractComponent
-import components.base.layouts.RootLayout
+import components.base.view.AbstractComponent
+import components.base.view.layouts.RootLayout
 import libs.dom.DOMNode
 
 class HomeView: AbstractComponent() {
