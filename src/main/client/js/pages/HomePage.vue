@@ -16,7 +16,7 @@
 		</p>
 		<div>
 			<div>{{ $store.state.count }}</div>
-			<button @click="$store.commit('INCREMENT')">+</button>
+			<button @click="$store.dispatch('incrementAsync')">+</button>
 			<button @click="$store.commit('DECREMENT')">-</button>
 		</div>
 	</div>
